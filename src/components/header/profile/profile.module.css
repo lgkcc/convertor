@@ -1,0 +1,10 @@
+.profile__nav{
+    background: #fff;
+    width: 98.5%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 16px 14px -7px rgb(81 149 175);
+}

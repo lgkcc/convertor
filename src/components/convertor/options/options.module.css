@@ -1,0 +1,123 @@
+.convert__option{
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+}
+.li{
+
+}
+.convert__optionValue{
+    display: flex;
+}
+.convert__btnvalue{
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 11px 15px rgba(81, 149, 175, 0.3);
+    font-size: 72px;
+    text-shadow: 0px 7px 4px rgba(185, 81, 151, 0.52);
+    position: relative;
+    cursor: pointer;
+}
+.convert__btnvalue:last-child{
+    background: #CFFB49;
+}
+.convert__btnvalue:first-child{
+    background: #EA44B3;
+    margin-left: 30px;
+}
+.convert__btnvalue:hover{
+    background: red;
+}
+.dropdown{
+    position: absolute;
+    opacity: 0;
+    background: #E1FC8B;
+    width: 140px;
+    padding: 8px;
+    text-align: center;
+    left: 0;
+    top: 106px;
+    font-size: 35px;
+    border-radius: 15px;
+    box-shadow: inset 0px 4px 13px rgba(142, 178, 30, 0.75);
+    pointer-events: none;
+    visibility: hidden;
+    cursor: pointer;
+}
+.dropdown li, ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown li{
+    background: #ABC757;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+.dropdown li:last-child{
+    margin-bottom: 0;
+}
+.convert__btnvalue:hover .dropdown{
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+}
+.convert__text{
+    color: #fff;
+    margin: 0 10px 0 10px;
+    font-size: 62px;
+    align-self: center;
+}
+.convert__input{
+    background: #FFFBBB;
+    width: 46%;
+    border: 7px solid #FFF54A;
+    border-radius: 10px;
+    font-size: 72px;
+    color: black;
+    text-align: center;
+    box-shadow: inset 0px 2px 13px 5px rgba(202, 196, 88, 0.5);
+}
+.convert__input::placeholder{
+    margin-top: 10px;
+    font-size: 72px;
+    color: rgba(0,0,0,.5);
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .convert__option{
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .convert__btnvalue:first-child{
+        margin-left: 0;
+    }
+    .convert__input{
+        width: 90vw;
+        font-size: 50px;
+    }
+    .convert__btnvalue{
+        font-size: 36px;
+    }
+    .convert__text{
+        margin: 0 27px 0 27px;
+        font-size: 72px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .convert__input::placeholder{
+        margin-top: 10px;
+        font-size: 50px;
+        color: rgba(0,0,0,.5);
+
+    }
+    .convert__optionValue{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+}
