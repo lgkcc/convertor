@@ -13,7 +13,14 @@ const PanelLogin = (props) => {
             </div>
             {/*123*/}
             <div onClick={props.loginGoogle} className={classes.profile__login}>
-                Войти с помощью Google
+                <div className={classes.icon}>
+                </div>
+                <div>
+                    google
+                </div>
+            </div>
+            <div className={classes.new}>
+                Создать новую учетную запись
             </div>
         </div>
     )

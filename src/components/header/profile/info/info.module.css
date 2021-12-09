@@ -6,12 +6,19 @@
 .profile__login{
     font-size: 24px;
     padding: 5px 0;
-    background: #E1FC8B;
+    background: #47B4DD;
     width: 100px;
     text-align: center;
     border-radius: 50px;
-    box-shadow: inset 0 11px 15px rgb(81 149 175 / 20%);
-
+    box-shadow: inset 0 10px 15px rgb(0 0 0 / 20%);
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .8s;
+    color: #fff;
+}
+.profile__login:hover{
+    box-shadow: 1px 1px 11px 4px rgb(0 0 0 / 20%);
 }
 .profile__login.none{
     display: none;
