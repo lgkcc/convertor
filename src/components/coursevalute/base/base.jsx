@@ -1,14 +1,20 @@
 import classes from "./base.module.css"
 import PriceItem from "./price_item/price_item";
+import {useEffect, useState} from "react";
 const Base = () => {
+    const [load, setLoad] = useState('notLoad')
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json").then(responce => responce.json()).then(json => setData(json.eur))
+    }, [load])
     return(
         <section className={classes.base}>
-            <PriceItem valute={'USD'} price={'1.1245'}/>
-            <PriceItem valute={'RUB'} price={'2.1245'}/>
-            <PriceItem valute={'JPY'} price={'3.1245'}/>
-            <PriceItem valute={'AUD'} price={'4.1245'}/>
-            <PriceItem valute={'CNY'} price={'5.1245'}/>
-            <PriceItem valute={'GBP'} price={'6.1245'}/>
+            <PriceItem valute={'USD'} price={data.usd}/>
+            <PriceItem valute={'RUB'} price={data.rub}/>
+            <PriceItem valute={'JPY'} price={data.jpy}/>
+            <PriceItem valute={'AUD'} price={data.aud}/>
+            <PriceItem valute={'CNY'} price={data.cny}/>
+            <PriceItem valute={'GBP'} price={data.gbp}/>
         </section>
     )
 }
