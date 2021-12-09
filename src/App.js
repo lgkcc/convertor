@@ -12,7 +12,7 @@ import {Context} from "./index";
 function App() {
     const {auth} = useContext(Context)
     const [user] = useAuthState(auth)
-    console.log(user)
+    //console.log(user)
   return (
       <BrowserRouter>
           <div className="container">

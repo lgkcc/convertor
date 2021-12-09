@@ -1,7 +1,7 @@
 .convert__option{
     display: flex;
     justify-content: center;
-    margin-top: 85px;
+    margin-top: 40px;
 }
 .li{
 
@@ -13,9 +13,9 @@
     color: #fff;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0px 11px 15px rgba(81, 149, 175, 0.3);
+    box-shadow: 0 11px 15px rgba(81, 149, 175, 0.3);
     font-size: 72px;
-    text-shadow: 0px 7px 4px rgba(185, 81, 151, 0.52);
+    text-shadow: 0 7px 4px rgba(185, 81, 151, 0.52);
     position: relative;
     cursor: pointer;
 }

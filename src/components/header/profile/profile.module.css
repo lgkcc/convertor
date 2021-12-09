@@ -2,6 +2,8 @@
     background: #fff;
     width: 98.5%;
     display: flex;
+    min-height: 75px;
+    max-height: 75px;
     justify-content: center;
     padding: 10px 0;
     border-bottom-left-radius: 20px;
