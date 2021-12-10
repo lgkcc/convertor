@@ -3,8 +3,6 @@ import PriceItem from "./price_item/price_item";
 import {useEffect, useState} from "react";
 import Price from "./price/price";
 const Base = () => {
-
-    //const [load, setLoad] = useState('notLoad')
     const [data, setData] = useState([])
     const [type, setType] = useState('usd')
     useEffect(() => {
