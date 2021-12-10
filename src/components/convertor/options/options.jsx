@@ -1,50 +1,43 @@
 import classes from "./options.module.css"
 import {useState} from "react";
 const Options = () => {
-    const [valDef, setDefVal] = useState('USD')
-    const [valRub, setRubVal] = useState('RUB')
-    const [valJpy, setJpyVal] = useState('JPY')
-    const [valAud, setAudVal] = useState('AUD')
-    const [valCny, setCnyVal] = useState('CNY')
-    const [valGbp, setGbpVal] = useState('GBP')
-    const rubClick = () => {
-        setRubVal(valDef)
-        setDefVal(valRub)
-    }
-    const jpyClick = () => {
-        setJpyVal(valDef)
-        setDefVal(valJpy)
-    }
-    const audClick = () => {
-        setAudVal(valDef)
-        setDefVal(valAud)
-    }
-    const cnyClick = () => {
-        setCnyVal(valDef)
-        setDefVal(valCny)
-    }
-    const gbpClick = () => {
-        setGbpVal(valDef)
-        setDefVal(valGbp)
-    }
+    const noActive = `${classes.li}`
+    const active = `${classes.li} ${classes.active}`
+    const [currencyOne, setCurrencyOne] = useState('usd')
+    const [currencyTwo, setCurrencyTwo] = useState('rub')
     return(
         <div className={classes.convert__option}>
             <input type="text" className={classes.convert__input} placeholder={100}/>
             <div className={classes.convert__optionValue}>
                 <div className={classes.convert__btnvalue}>
-                    {valDef}
+                    {currencyOne}
                     <div className={classes.dropdown}>
                         <ul>
-                            <li className={classes.li} onClick={rubClick}>{valRub}</li>
-                            <li className={classes.li} onClick={jpyClick}>{valJpy}</li>
-                            <li className={classes.li} onClick={audClick}>{valAud}</li>
-                            <li className={classes.li} onClick={cnyClick}>{valCny}</li>
-                            <li className={classes.li} onClick={gbpClick}>{valGbp}</li>
+                            <li className={(currencyOne === 'usd' || currencyTwo === 'usd') ? active : noActive} onClick={() => setCurrencyOne('usd')}>USD</li>
+                            <li className={(currencyOne === 'eur' || currencyTwo === 'eur') ? active : noActive} onClick={() => setCurrencyOne('eur')}>EUR</li>
+                            <li className={(currencyOne === 'rub' || currencyTwo === 'rub') ? active : noActive} onClick={() => setCurrencyOne('rub')}>RUB</li>
+                            <li className={(currencyOne === 'jpy' || currencyTwo === 'jpy') ? active : noActive} onClick={() => setCurrencyOne('jpy')}>JPY</li>
+                            <li className={(currencyOne === 'aud' || currencyTwo === 'aud') ? active : noActive} onClick={() => setCurrencyOne('aud')}>AUD</li>
+                            <li className={(currencyOne === 'cny' || currencyTwo === 'cny') ? active : noActive} onClick={() => setCurrencyOne('cny')}>CNY</li>
+                            <li className={(currencyOne === 'gbp' || currencyTwo === 'gbp') ? active : noActive} onClick={() => setCurrencyOne('gbp')}>GBP</li>
                         </ul>
                     </div>
                 </div>
                 <span className={classes.convert__text}>=</span>
-                <a href="" className={classes.convert__btnvalue}>RUB</a>
+                <div className={classes.convert__btnvalue}>
+                    {currencyTwo}
+                    <div className={classes.dropdown}>
+                        <ul>
+                            <li className={(currencyOne === 'usd' || currencyTwo === 'usd') ? active : noActive} onClick={() => setCurrencyTwo('usd')}>USD</li>
+                            <li className={(currencyOne === 'eur' || currencyTwo === 'eur') ? active : noActive} onClick={() => setCurrencyTwo('eur')}>EUR</li>
+                            <li className={(currencyOne === 'rub' || currencyTwo === 'rub') ? active : noActive} onClick={() => setCurrencyTwo('rub')}>RUB</li>
+                            <li className={(currencyOne === 'jpy' || currencyTwo === 'jpy') ? active : noActive} onClick={() => setCurrencyTwo('jpy')}>JPY</li>
+                            <li className={(currencyOne === 'aud' || currencyTwo === 'aud') ? active : noActive} onClick={() => setCurrencyTwo('aud')}>AUD</li>
+                            <li className={(currencyOne === 'cny' || currencyTwo === 'cny') ? active : noActive} onClick={() => setCurrencyTwo('cny')}>CNY</li>
+                            <li className={(currencyOne === 'gbp' || currencyTwo === 'gbp') ? active : noActive} onClick={() => setCurrencyTwo('gbp')}>GBP</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )
