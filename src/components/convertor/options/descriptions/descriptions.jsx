@@ -1,9 +1,9 @@
 import classes from "./descriptions.module.css";
-const Descriptions = () => {
+const Descriptions = (props) => {
     return(
         <div className={classes.convert__description}>
             <div className={classes.convert__textarea}>
-                Выберите валюты для конвертации...
+                {props.summary}
             </div>
         </div>
     )
