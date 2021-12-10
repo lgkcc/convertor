@@ -1,4 +1,4 @@
-.base{
+.baseCur{
     display: flex;
     align-items: center;
     margin: 40px 0;
@@ -12,6 +12,7 @@
 .val{
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: center;
     background: #FFA44A;
     font-size: 46px;
@@ -24,7 +25,55 @@
     margin: 0 22px 0 22px;
     font-weight: 700;
     padding: 12px 0;
+    text-transform: uppercase;
+    cursor: pointer;
 }
+.dropdown{
+    position: absolute;
+    opacity: 0;
+    background: #E1FC8B;
+    width: 195px;
+    padding: 8px;
+    text-align: center;
+    left: 0;
+    top: 80px;
+    font-size: 35px;
+    border-radius: 15px;
+    box-shadow: inset 0 4px 13px rgba(142, 178, 30, 0.75);
+    pointer-events: none;
+    visibility: hidden;
+}
+.dropdown .li, ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown .li{
+    background: #ABC757;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    box-shadow: 0 4px 13px rgba(142, 178, 30, .2);
+    cursor: pointer;
+    color: #fff;
+    user-select: none;
+}
+.dropdown .li.active{
+    background: rgba(171, 199, 87, 0.3);
+    box-shadow: inset 0 4px 13px rgba(142, 178, 30, 0.9);
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.51);
+    text-shadow: none;
+}
+.dropdown .li:last-child{
+    margin-bottom: 0;
+}
+.val:hover .dropdown{
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+}
+
 @media screen and (max-width: 768px) and (min-width: 320px) {
     .base{
         display: flex;

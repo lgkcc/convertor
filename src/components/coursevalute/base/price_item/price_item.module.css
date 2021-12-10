@@ -11,6 +11,7 @@
     font-weight: 700;
     padding: 12px 0;
     text-shadow: 3px 3px #00000040;
+    min-height: 90px;
 }
 .item span:first-child{
     color: #1C849C;
