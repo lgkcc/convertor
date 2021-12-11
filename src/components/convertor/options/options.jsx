@@ -13,7 +13,7 @@ const Options = () => {
     useEffect(() => {
         fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currencyOne}/${currencyTwo}.json`).then(responce => responce.json()).then(json => setResult(json[currencyTwo]))
     }, [currencyOne, currencyTwo])
-    const calc = () => setSummary(Number(result * option).toFixed(1))
+    const calc = () => (Number(option) === 0) ? setSummary('Введите количество!') :setSummary(Number(result * option).toFixed(1))
     const handleChange = event => (isNaN(Number(event.target.value))) ? setSummary('Вводить можно только цифры!') : setOption(event.target.value)
     return(
         <div>
@@ -51,8 +51,8 @@ const Options = () => {
                     </div>
                 </div>
             </div>
-            <Descriptions summary = {summary}/>
-            <Btnconv calc = {calc}/>
+            <Descriptions summary = {summary} setSummary = {setSummary}/>
+            <Btnconv calc = {calc} currencyOne = {currencyOne} currencyTwo = {currencyTwo} />
         </div>
 
     )
