@@ -8,11 +8,20 @@ import {useAuthState} from "react-firebase-hooks/auth";
 
 const Profile = () => {
     const {auth} = useContext(Context)
+
     const loginGoogle = async () => {
-        const provider = new firebase.auth.GoogleAuthProvider()
-        const {user} = await auth.signInWithPopup(provider)
-        if (user) {
-            setExit(false)
+        try{
+            const provider = new firebase.auth.GoogleAuthProvider()
+            const {user} = await auth.signInWithPopup(provider)
+            if (user) {
+                setExit(false)
+            }
+            else {
+                setExit(true)
+            }
+        }
+        catch (e){
+
         }
     }
     const [exit, setExit] = useState(false)

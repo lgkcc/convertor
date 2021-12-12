@@ -43,11 +43,14 @@
 .profile__exit{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 1px black solid;
-    padding: 6px;
+    padding: 6px 12px;
     border-radius: 12px;
     background: rgba(255, 0, 0, .5);
     box-shadow: inset 0px 10px 15px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    height: 65px;
 }
 .profile__exit:hover{
     background: red;
@@ -55,9 +58,14 @@
 .profile__profile{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 1px black solid;
     padding: 6px;
     border-radius: 12px;
     background: rgba(232, 231, 231, 0.5);
     box-shadow: inset 0px 10px 15px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    color: black;
+    height: 65px;
+    font-size: 16px;
 }

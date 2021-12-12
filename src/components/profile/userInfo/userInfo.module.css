@@ -1,0 +1,12 @@
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.userText{
+    margin: 10px 0;
+}
+.userInfo img {
+    border-radius: 500px;
+}

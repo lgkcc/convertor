@@ -1,3 +1,13 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 200px;
+    position: absolute;
+}
 .ldsroller {
     display: inline-block;
     position: relative;

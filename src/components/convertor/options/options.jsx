@@ -15,6 +15,13 @@ const Options = () => {
     }, [currencyOne, currencyTwo])
     const calc = () => (Number(option) === 0) ? setSummary('Введите количество!') :setSummary(Number(result * option).toFixed(1))
     const handleChange = event => (isNaN(Number(event.target.value))) ? setSummary('Вводить можно только цифры!') : setOption(event.target.value)
+    useEffect(() => {
+        const onKeypress = e => e.keyCode === 13 ? calc() : '';
+        document.addEventListener('keypress', onKeypress);
+        return () => {
+            document.removeEventListener('keypress', onKeypress);
+        };
+    },);
     return(
         <div>
             <div className={classes.convert__option}>
