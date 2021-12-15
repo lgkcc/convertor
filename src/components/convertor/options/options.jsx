@@ -10,7 +10,7 @@ const Options = () => {
     const [result, setResult] = useState([])
     const [option, setOption] = useState('')
     const [summary, setSummary] = useState('Выберите валюты для конвертации...')
-    const [history, setHistory] = useState([])
+    //const [history, setHistory] = useState([])
     useEffect(() => {
         fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currencyOne}/${currencyTwo}.json`).then(responce => responce.json()).then(json => setResult(json[currencyTwo]))
     }, [currencyOne, currencyTwo])
@@ -27,18 +27,15 @@ const Options = () => {
         }
     },)
 
-    ////// TEST //////
+    /////////////////
     // useEffect(() => {
-    //     const finall = summary
-    //     const operator = option
-    //     const curOne = currencyOne
-    //     const curTwo = currencyTwo
     //     const historyList = () => {
-    //         setHistory({a: curOne, b: curTwo, c: operator, d: finall})
+    //         console.log(option)
+    //         setHistory({a: currencyOne, b: currencyTwo, c: option, d: summary})
     //     }
     //     historyList()
     //     console.log(history)
-    // }, [summary])
+    // }, [summary, option, currencyOne, currencyTwo, result])
     /////////////////
 
     return(

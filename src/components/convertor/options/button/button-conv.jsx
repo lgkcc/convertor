@@ -1,5 +1,4 @@
 import classes from "./button-conv.module.css";
-import {useEffect} from "react";
 const Btnconv = (props) => {
     return(
         <div className={classes.flex}>

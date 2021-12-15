@@ -1,6 +1,6 @@
 import classes from "./userInfo.module.css"
 import {useAuthState} from "react-firebase-hooks/auth";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import {Context} from "../../../index";
 import {updateProfile} from "@firebase/auth";
 const UserInfo = (props) => {

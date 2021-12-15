@@ -4,7 +4,6 @@ import PanelLogin from "./panel/panel";
 import Info from "./info/info";
 import {Context} from "../../../index";
 import firebase from "firebase/compat";
-import {useAuthState} from "react-firebase-hooks/auth";
 
 const Profile = () => {
     const {auth} = useContext(Context)
