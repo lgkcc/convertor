@@ -10,18 +10,37 @@ const Options = () => {
     const [result, setResult] = useState([])
     const [option, setOption] = useState('')
     const [summary, setSummary] = useState('Выберите валюты для конвертации...')
+    const [history, setHistory] = useState([])
     useEffect(() => {
         fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currencyOne}/${currencyTwo}.json`).then(responce => responce.json()).then(json => setResult(json[currencyTwo]))
     }, [currencyOne, currencyTwo])
-    const calc = () => (Number(option) === 0) ? setSummary('Введите количество!') :setSummary(Number(result * option).toFixed(1))
+    const calc = () => {
+        (Number(option) === 0) ? setSummary('Введите количество!') : setSummary(Number(result * option).toFixed(1))
+    }
+
     const handleChange = event => (isNaN(Number(event.target.value))) ? setSummary('Вводить можно только цифры!') : setOption(event.target.value)
     useEffect(() => {
-        const onKeypress = e => e.keyCode === 13 ? calc() : '';
-        document.addEventListener('keypress', onKeypress);
+        const onKeypress = e => e.keyCode === 13 ? calc() : ''
+        document.addEventListener('keypress', onKeypress)
         return () => {
-            document.removeEventListener('keypress', onKeypress);
-        };
-    },);
+            document.removeEventListener('keypress', onKeypress)
+        }
+    },)
+
+    ////// TEST //////
+    // useEffect(() => {
+    //     const finall = summary
+    //     const operator = option
+    //     const curOne = currencyOne
+    //     const curTwo = currencyTwo
+    //     const historyList = () => {
+    //         setHistory({a: curOne, b: curTwo, c: operator, d: finall})
+    //     }
+    //     historyList()
+    //     console.log(history)
+    // }, [summary])
+    /////////////////
+
     return(
         <div>
             <div className={classes.convert__option}>

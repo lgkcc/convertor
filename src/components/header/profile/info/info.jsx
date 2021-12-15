@@ -1,5 +1,4 @@
 import classes from "./info.module.css";
-import Loader from "../panel/loader/loader";
 import {useContext} from "react";
 import {Context} from "../../../../index";
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -8,10 +7,8 @@ import {NavLink} from "react-router-dom";
 const Info = (props) => {
     const {auth} = useContext(Context)
     const [user] = useAuthState(auth)
-    console.log(user)
     const signOut = () => {
         auth.signOut()
-        console.log('Выход выполнен')
     }
     if (user) {
         return (

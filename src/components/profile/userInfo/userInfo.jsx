@@ -8,12 +8,12 @@ const UserInfo = (props) => {
     const [user] = useAuthState(auth)
     const [name, setName] = useState('')
     const [profile, setProfile] = useState([])
-    const handleChange = event => (setName(event.target.value))
+    //const [photo, setPhoto] = useState([])
+    const nameChange = event => (setName(event.target.value))
+    //const photoChange = event => (setPhoto(event.target.value))
     const update = () => {
         updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: '',
-            email: '',
+            displayName: name
         }).then(()=>{
             setProfile(`update on ${name}`)
         }).catch((error) =>{
@@ -23,11 +23,12 @@ const UserInfo = (props) => {
 
     return(
         <div className={classes.userInfo}>
-            <img width='200px' src={user.photoURL} alt="123"/>
+            <img width='200px' src={user.photoURL} alt="Нету фото"/>
             <span className={classes.userText}>Имя: {user.displayName}</span>
             <span className={classes.userText}>Email: {user.email}</span>
-            <input type="text" value={name} onChange={handleChange}  placeholder='Введите имя, которое хотите установить '/>
-            <button onClick={() => update()}>Обновить имя пользователя</button>
+            <input type="text" onChange={nameChange}  placeholder='Введите имя, которое хотите установить'/>
+            {/*<input type="text" onChange={photoChange}  placeholder='Вставьте ссылку на фото, которое хотите установить'/>*/}
+            <button onClick={() => update()}>Обновить имя</button>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Header from "./components/header/header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -15,11 +15,9 @@ function App() {
     const {auth} = useContext(Context)
     const [user, loading, error] = useAuthState(auth)
     if (loading) {
-        console.log('Загрузка')
         return <Loader />
     }
     else if (error){
-        console.log('ошибка')
     }
     else {
         return (

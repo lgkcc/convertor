@@ -21,15 +21,13 @@ export const Context = createContext(null)
 
 const auth = firebase.auth()
 ReactDOM.render(
-  <React.StrictMode>
-      <Context.Provider value={{
-          firebase,
-          auth
-      }}>
-      <App/>
-      </Context.Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Context.Provider value={{
+        firebase,
+        auth
+    }}>
+        <App/>
+    </Context.Provider>,
+    document.getElementById('root')
 );
 
 reportWebVitals();

@@ -7,7 +7,7 @@ const UserProfile = (props) => {
     const {auth} = useContext(Context)
     const [user] = useAuthState(auth)
     return(
-        <div className={classes}>
+        <div className={classes.profile}>
             <UserInfo />
         </div>
     )
